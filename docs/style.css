@@ -35,7 +35,7 @@ body {
 
 /* 敵画像ビュー */
 #enemyImageView {
-	height: 4rem;
+	/* height: 3.6rem; */
 }
 
 /* コマンドビュー */
