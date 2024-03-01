@@ -11,9 +11,9 @@ Friendクラス
   薬草の回復力
 */
 
-let friend1 = new Friend("石塚", 240, 25, 13, 5, 400); // 味方
-let friend2 = new Friend("内藤", 1400, 180, 12, 18, 1); // 味方
-let friend3 = new Friend("小佐野(毒)", 4, 1, 1, 0, 0); // 味方
+let friend1 = new Friend("いしづか", 240, 25, 13, 5, 400); // 味方
+let friend2 = new Friend("ないとう", 1400, 180, 12, 18, 1); // 味方
+let friend3 = new Friend("こさの(毒)", 4, 1, 1, 0, 0); // 味方
 let enemy1 = new MyMelody(
 	"マイメロディ",
 	600,
