@@ -387,7 +387,7 @@ class GameManage {
 
 				// 敵のHPを更新する(getElementsByClassNameはDOMを配列で取得するのでループで取り出す)
 				for (let enemyHpElement of enemyHpElements) {
-					enemyHpElement.textContent = c.hp + " / ";
+					enemyHpElement.textContent = c.hp;
 				}
 
 				console.log(c.name + " " + c.hp);
@@ -407,11 +407,11 @@ class GameManage {
 
 				let currentHp = document.createElement("span");
 				currentHp.setAttribute("class", "hp" + characters.indexOf(c));
-				currentHp.textContent = c.hp + " / ";
+				currentHp.textContent = c.hp;
 				enemyHp.appendChild(currentHp);
 
 				let enemyMaxHp = document.createElement("span");
-				enemyMaxHp.textContent = c.hp;
+				enemyMaxHp.textContent = " / " + c.hp;
 				enemyHp.appendChild(enemyMaxHp);
 
 				let img = document.createElement("img");
