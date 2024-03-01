@@ -11,9 +11,9 @@ Friendクラス
   薬草の回復力
 */
 
-let friend1 = new Friend("いしづか", 240, 25, 13, 5, 400); // 味方
-let friend2 = new Friend("ないとう", 1400, 120, 12, 18, 1); // 味方
-let friend3 = new Friend("こさの(毒)", 4, 1, 1, 0, 0); // 味方
+let friend1 = new Friend("いしづか", 240, 25, 13, 5, 100);
+let friend2 = new Friend("ないとう", 1400, 120, 12, 18, 700);
+let friend3 = new Friend("こさの(毒)", 5, 1, 1, 0, 0);
 let enemy1 = new MyMelody(
 	"マイメロディ",
 	9999,
@@ -23,12 +23,12 @@ let enemy1 = new MyMelody(
 ); // 敵
 let enemy2 = new Pompom(
 	"ポムポムプリン",
-	180,
+	280,
 	70,
 	6,
 	"./image/list-pompompurin.png"
 ); // 敵
-let enemy3 = new Child("かわいいこども", 600, 100, 1, "./image/IMG_3517.jpg"); // 敵
+let enemy3 = new Child("こども", 400, 100, 1, "./image/IMG_3517.jpg"); // 敵
 
 // キャラクター配列をつくる
 let characters = [];

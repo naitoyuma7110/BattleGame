@@ -402,6 +402,10 @@ class GameManage {
 		for (let c of characters) {
 			if (c.type === "enemy") {
 				let imgContainer = document.createElement("div");
+				imgContainer.setAttribute(
+					"class",
+					"imgContainer" + characters.indexOf(c)
+				);
 
 				let enemyHp = document.createElement("div");
 
@@ -425,7 +429,11 @@ class GameManage {
 				imgContainer.appendChild(img);
 				imgContainer.appendChild(enemyName);
 
-				enemyImageView.appendChild(imgContainer);
+				let enemyWrapper = document.createElement("div");
+
+				enemyWrapper.appendChild(imgContainer);
+
+				enemyImageView.appendChild(enemyWrapper);
 			}
 		}
 	}
@@ -445,9 +453,13 @@ class GameManage {
 
 				// 敵の場合は画像を削除
 				if (c.type === "enemy") {
-					document
-						.getElementById("enemyImage" + characters.indexOf(c))
-						.remove();
+					let imgContainers = document.getElementsByClassName(
+						"imgContainer" + characters.indexOf(c)
+					);
+
+					for (let imgContainer of imgContainers) {
+						imgContainer.remove();
+					}
 				}
 			}
 		}
