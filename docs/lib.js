@@ -369,10 +369,6 @@ class GameManage {
 	showParameter() {
 		// パラメータを消去する
 		parameterView.innerHTML = "";
-		let enemyHp = document.querySelectorAll('[class^="hp"]');
-
-		// TODO：ここで現在の敵HP消えない
-		enemyHp.textContent = "";
 
 		// 味方のパラメータを表示する
 		for (let c of characters) {
@@ -391,7 +387,7 @@ class GameManage {
 
 				// 敵のHPを更新する(getElementsByClassNameはDOMを配列で取得するのでループで取り出す)
 				for (let enemyHpElement of enemyHpElements) {
-					enemyHpElement.textContent = c.hp + "/";
+					enemyHpElement.textContent = c.hp + " / ";
 				}
 
 				console.log(c.name + " " + c.hp);
@@ -436,7 +432,7 @@ class GameManage {
 
 	// 戦闘開始時のメッセージを表示する
 	showFirstMessage() {
-		Message.printMessage("おともだちが現れた<br>");
+		Message.printMessage("モンスターが現れた<br>");
 	}
 
 	// 倒れたキャラクターを処理する
