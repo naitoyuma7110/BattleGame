@@ -369,6 +369,10 @@ class GameManage {
 	showParameter() {
 		// パラメータを消去する
 		parameterView.innerHTML = "";
+		let enemyHp = document.querySelectorAll('[class^="hp"]');
+
+		// TODO：ここで現在の敵HP消えない
+		enemyHp.textContent = "";
 
 		// 味方のパラメータを表示する
 		for (let c of characters) {
@@ -378,9 +382,16 @@ class GameManage {
 			}
 		}
 
-		// 敵のパラメータをコンソールに表示する（デバッグ用）
+		// 敵のパラメータを表示する
 		for (let c of characters) {
 			if (c.type === "enemy") {
+				let enemyHp = document.getElementsByClassName(
+					"hp" + characters.indexOf(c)
+				);
+
+				// TODO：ここで敵のHP更新されない
+				enemyHp.textContent = c.hp + "/";
+
 				console.log(c.name + " " + c.hp);
 			}
 		}
@@ -393,6 +404,15 @@ class GameManage {
 		for (let c of characters) {
 			if (c.type === "enemy") {
 				let imgContainer = document.createElement("div");
+
+				let enemyHp = document.createElement("div");
+				enemyHp.setAttribute("class", "hp" + characters.indexOf(c));
+				enemyHp.textContent = c.hp + " / ";
+
+				let enemyMaxHp = document.createElement("span");
+				enemyMaxHp.textContent = c.hp;
+				enemyHp.appendChild(enemyMaxHp);
+
 				let img = document.createElement("img");
 				img.setAttribute("src", c.path);
 				img.setAttribute("id", "enemyImage" + characters.indexOf(c));
@@ -400,6 +420,7 @@ class GameManage {
 				let enemyName = document.createElement("div");
 				enemyName.textContent = c.name;
 
+				imgContainer.appendChild(enemyHp);
 				imgContainer.appendChild(img);
 				imgContainer.appendChild(enemyName);
 

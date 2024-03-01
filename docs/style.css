@@ -38,12 +38,7 @@ body {
 
 /* 敵画像ビュー */
 #enemyImageView {
-	max-width: 900px;
-	width: 100%;
-	position: absolute; /* 絶対位置指定 */
-	top: 40%; /* 上端をビューポートの中央に */
-	left: 50%; /* 左端をビューポートの中央に */
-	transform: translate(-50%, -50%); /* 要素を中央に移動 */
+	margin-top: 10px;
 	display: flex;
 	justify-content: center;
 }
@@ -65,6 +60,11 @@ body {
 #enemyImageView > div:nth-child(2) {
 	color: blue;
 }
+
+#enemyImageView .hp {
+	color: white;
+}
+
 .message_wrapper {
 	position: fixed;
 	width: 100%;
