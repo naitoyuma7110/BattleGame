@@ -33,12 +33,6 @@ class Friend {
 		);
 	}
 
-	// コマンドビューに表示するコマンド（HTML）を返す
-	//     eventが"start"の場合
-	//         はじめに表示するコマンド（HTML）を返す
-	//     eventがユーザのコマンド選択の結果の場合
-	//         eventに応じて、表示するコマンド（HTML）を返す、
-	//         または、味方1人のコマンド選択を終了させる"end"を返す
 	getCommand(event) {
 		// はじめに表示するコマンド
 		if (event === "start") {
@@ -213,9 +207,9 @@ class Enemy {
 }
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// トロルクラス
+// マイメロディ
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-class Troll extends Enemy {
+class MyMelody extends Enemy {
 	// コンストラクタ
 	constructor(name, hp, offense, speed, path) {
 		super(name, hp, offense, speed, path);
@@ -238,7 +232,7 @@ class Troll extends Enemy {
 		if (f.liveFlag) {
 			Message.printMessage(
 				this.name +
-					"が襲いかかってきた<br>" +
+					"は命を刈り取る<br>" +
 					f.name +
 					"は" +
 					this.offense +
@@ -253,9 +247,9 @@ class Troll extends Enemy {
 }
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// ドラゴンクラス
+// ポムポムプリン
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-class Dragon extends Enemy {
+class Pompom extends Enemy {
 	// コンストラクタ
 	constructor(name, hp, offense, speed, path) {
 		super(name, hp, offense, speed, path);
@@ -265,9 +259,7 @@ class Dragon extends Enemy {
 	attack() {
 		// 一定の確率で攻撃をミスする
 		if (getRandomIntInclusive(0, 4) === 4) {
-			Message.printMessage(
-				"ドラゴンは<br>グフッグフッと咳き込んでいる・・・<br>"
-			);
+			Message.printMessage(this.name + "は<br>くつ集めをしている・・・<br>");
 			return;
 		}
 
@@ -286,7 +278,7 @@ class Dragon extends Enemy {
 		if (f.liveFlag) {
 			Message.printMessage(
 				this.name +
-					"は炎を吹いた<br>" +
+					"はお昼寝とプリン体操<br>" +
 					f.name +
 					"は" +
 					this.offense +
@@ -301,9 +293,9 @@ class Dragon extends Enemy {
 }
 
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// ドラゴンクラス
+// 子供内藤
 //━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-class Kitagawa extends Enemy {
+class Child extends Enemy {
 	// コンストラクタ
 	constructor(name, hp, offense, speed, path) {
 		super(name, hp, offense, speed, path);
@@ -312,8 +304,8 @@ class Kitagawa extends Enemy {
 	// 攻撃メソッド
 	attack() {
 		// 一定の確率で攻撃をミスする
-		if (getRandomIntInclusive(0, 2) === 2) {
-			Message.printMessage(this.name + "は<br>攻撃をためらっている・・・<br>");
+		if (getRandomIntInclusive(0, 1) === 1) {
+			Message.printMessage(this.name + "は<br>眠そうにしている・・・<br>");
 			return;
 		}
 
@@ -332,7 +324,7 @@ class Kitagawa extends Enemy {
 		if (f.liveFlag) {
 			Message.printMessage(
 				this.name +
-					"はゲロを吹いた<br>" +
+					"のサイコキネシス<br>" +
 					f.name +
 					"は" +
 					this.offense +

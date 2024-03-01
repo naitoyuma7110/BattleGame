@@ -1,20 +1,42 @@
 // キャラクターをインスタンス化する
-let friend1 = new Friend("ないとう", 999, 1281, 13, 20, 45); // 味方
-let friend2 = new Friend("あかほり", 1, 1, 12, 3, 1); // 味方
-let friend3 = new Friend("とりい", 3, 3, 11, 1, 1); // 味方
-let friend4 = new Friend("やぎ(毒)", 4, 2, 11, 1, 1); // 味方
-let enemy1 = new Troll("トロル", 270, 38, 20, "./image/troll.png"); // 敵
-let enemy2 = new Dragon("ドラゴン", 380, 68, 6, "./image/dragon.png"); // 敵
-let enemy3 = new Kitagawa("北川", 6000, 120, 1, "./image/kitagawa.png"); // 敵
+
+/* 
+Friendクラス
+--引数--
+  名前
+  体力
+  攻撃力
+  素早さ
+  薬草数
+  薬草の回復力
+*/
+
+let friend1 = new Friend("石塚", 240, 25, 13, 5, 400); // 味方
+let friend2 = new Friend("内藤", 1400, 180, 12, 18, 1); // 味方
+let friend3 = new Friend("小佐野(毒)", 4, 1, 1, 0, 0); // 味方
+let enemy1 = new MyMelody(
+	"マイメロディ",
+	600,
+	999,
+	20,
+	"./image/list-mymelody.png"
+); // 敵
+let enemy2 = new Pompom(
+	"ポムポムプリン",
+	480,
+	70,
+	6,
+	"./image/list-pompompurin.png"
+); // 敵
+let enemy3 = new Child("かわいいこども", 999, 100, 1, "./image/IMG_3517.jpg"); // 敵
 
 // キャラクター配列をつくる
 let characters = [];
-characters.push(friend1); // 味方
-characters.push(friend2); // 味方
-characters.push(friend3); // 味方
-characters.push(friend4); // 味方
-characters.push(enemy1); // 敵
-characters.push(enemy2); // 敵
+characters.push(friend1);
+characters.push(friend2);
+characters.push(friend3);
+characters.push(enemy1);
+characters.push(enemy2);
 characters.push(enemy3);
 
 // ゲーム管理クラスをインスタンス化する
