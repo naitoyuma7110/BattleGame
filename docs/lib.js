@@ -411,7 +411,7 @@ class GameManage {
 				enemyHp.appendChild(currentHp);
 
 				let enemyMaxHp = document.createElement("span");
-				enemyMaxHp.textContent = "　/　" + c.hp;
+				enemyMaxHp.textContent = "/" + c.hp;
 				enemyHp.appendChild(enemyMaxHp);
 
 				let img = document.createElement("img");
