@@ -5,14 +5,15 @@ html {
 body {
 	padding: 0;
 	margin: 0;
-	width: 100%;
-	max-width: 600px;
-	font-size: 0.3rem;
+	font-size: 0.4rem;
 	background-color: black;
 	color: #ffffff;
-	text-align: center;
-	margin-right: auto;
-	margin-left: auto;
+}
+
+.view_wrapper {
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
 }
 
 /* パラメータビュー */
@@ -37,12 +38,44 @@ body {
 
 /* 敵画像ビュー */
 #enemyImageView {
-	/* height: 3.6rem; */
+	max-width: 900px;
+	width: 100%;
+	position: absolute; /* 絶対位置指定 */
+	top: 40%; /* 上端をビューポートの中央に */
+	left: 50%; /* 左端をビューポートの中央に */
+	transform: translate(-50%, -50%); /* 要素を中央に移動 */
+	display: flex;
+	justify-content: center;
+}
+
+#enemyImageView > div {
+	width: 30%;
+	text-align: center;
+	color: red;
+	font-size: 0.2rem;
+}
+
+#enemyImageView > div > img {
+	width: 100%;
+	height: 4rem;
+	border-radius: 10px;
+	object-fit: contain;
+}
+
+#enemyImageView > div:nth-child(2) {
+	color: blue;
+}
+.message_wrapper {
+	position: fixed;
+	width: 100%;
+	max-width: 900px;
+	bottom: 0;
+	font-size: 0.5rem;
 }
 
 /* コマンドビュー */
 #commandView {
-	padding: 0.2rem 0.2rem;
+	padding: 0.1rem 0;
 	margin: 0.1rem;
 	text-align: left;
 	vertical-align: top;
@@ -56,7 +89,7 @@ body {
 }
 
 #commandView > div {
-	margin: 0.1rem 0;
+	margin: 0.3rem 0;
 }
 
 /* メッセージビュー */
@@ -100,8 +133,4 @@ body {
      透明な▶を名前の左に追加 */
 	content: "▶";
 	opacity: 0;
-}
-
-.enemy-img {
-	width: 30%;
 }

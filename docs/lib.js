@@ -392,11 +392,18 @@ class GameManage {
 		let enemyImageView = document.getElementById("enemyImageView");
 		for (let c of characters) {
 			if (c.type === "enemy") {
+				let imgContainer = document.createElement("div");
 				let img = document.createElement("img");
 				img.setAttribute("src", c.path);
 				img.setAttribute("id", "enemyImage" + characters.indexOf(c));
 				img.className = "enemy-img";
-				enemyImageView.appendChild(img);
+				let enemyName = document.createElement("div");
+				enemyName.textContent = c.name;
+
+				imgContainer.appendChild(img);
+				imgContainer.appendChild(enemyName);
+
+				enemyImageView.appendChild(imgContainer);
 			}
 		}
 	}

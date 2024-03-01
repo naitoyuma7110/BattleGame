@@ -1,20 +1,21 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>コマンドバトル</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css" />
 		<link href="style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
-		<div>
+		<div class="view_wrapper">
 			<div id="parameterView"></div>
-		</div>
-		<div
-			id="enemyImageView"
-			style="display: flex; align-items: center; justify-content: center"
-		></div>
-		<div>
-			<div id="messageView"></div>
-			<div id="commandView"></div>
+			<div id="enemyImageView"></div>
+			<div class="message_wrapper">
+				<div id="messageView"></div>
+				<div id="commandView"></div>
+			</div>
 		</div>
 		<script type="text/javascript" src="lib.js"></script>
 		<script type="text/javascript" src="game.js"></script>
