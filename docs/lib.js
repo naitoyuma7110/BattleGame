@@ -385,12 +385,14 @@ class GameManage {
 		// 敵のパラメータを表示する
 		for (let c of characters) {
 			if (c.type === "enemy") {
-				let enemyHp = document.getElementsByClassName(
+				let enemyHpElements = document.getElementsByClassName(
 					"hp" + characters.indexOf(c)
 				);
 
-				// TODO：ここで敵のHP更新されない
-				enemyHp.textContent = c.hp + "/";
+				// 敵のHPを更新する(getElementsByClassNameはDOMを配列で取得するのでループで取り出す)
+				for (let enemyHpElement of enemyHpElements) {
+					enemyHpElement.textContent = c.hp + "/";
+				}
 
 				console.log(c.name + " " + c.hp);
 			}
@@ -406,8 +408,11 @@ class GameManage {
 				let imgContainer = document.createElement("div");
 
 				let enemyHp = document.createElement("div");
-				enemyHp.setAttribute("class", "hp" + characters.indexOf(c));
-				enemyHp.textContent = c.hp + " / ";
+
+				let currentHp = document.createElement("span");
+				currentHp.setAttribute("class", "hp" + characters.indexOf(c));
+				currentHp.textContent = c.hp + " / ";
+				enemyHp.appendChild(currentHp);
 
 				let enemyMaxHp = document.createElement("span");
 				enemyMaxHp.textContent = c.hp;

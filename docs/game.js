@@ -12,23 +12,23 @@ Friendクラス
 */
 
 let friend1 = new Friend("いしづか", 240, 25, 13, 5, 400); // 味方
-let friend2 = new Friend("ないとう", 1400, 180, 12, 18, 1); // 味方
+let friend2 = new Friend("ないとう", 1400, 120, 12, 18, 1); // 味方
 let friend3 = new Friend("こさの(毒)", 4, 1, 1, 0, 0); // 味方
 let enemy1 = new MyMelody(
 	"マイメロディ",
-	600,
+	9999,
 	999,
 	20,
 	"./image/list-mymelody.png"
 ); // 敵
 let enemy2 = new Pompom(
 	"ポムポムプリン",
-	480,
+	180,
 	70,
 	6,
 	"./image/list-pompompurin.png"
 ); // 敵
-let enemy3 = new Child("かわいいこども", 999, 100, 1, "./image/IMG_3517.jpg"); // 敵
+let enemy3 = new Child("かわいいこども", 600, 100, 1, "./image/IMG_3517.jpg"); // 敵
 
 // キャラクター配列をつくる
 let characters = [];
