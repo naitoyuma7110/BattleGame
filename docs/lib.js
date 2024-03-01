@@ -88,15 +88,15 @@ class Friend {
 		// コマンドの初期状態の場合
 		if (event === "start") {
 			// 攻撃コマンドのイベントハンドラを設定する
-			attackCommand.addEventListener("click", command.callback);
+			attackCommand.addEventListener("click", command.handlerOnClick);
 			// 回復コマンドのイベントハンドラを設定する
-			recoveryCommand.addEventListener("click", command.callback);
+			recoveryCommand.addEventListener("click", command.handlerOnClick);
 		}
 		// 攻撃コマンドが選択された場合
 		if (this.command === "attackCommand") {
 			let element = document.getElementsByClassName("enemyCommand");
 			for (let i = 0; i < element.length; ++i) {
-				element[i].addEventListener("click", command.callback);
+				element[i].addEventListener("click", command.handlerOnClick);
 			}
 		}
 	}
@@ -403,7 +403,7 @@ class GameManage {
 
 	// 戦闘開始時のメッセージを表示する
 	showFirstMessage() {
-		Message.printMessage("モンスターが現れた<br>");
+		Message.printMessage("おともだちが現れた<br>");
 	}
 
 	// 倒れたキャラクターを処理する
@@ -441,7 +441,7 @@ class GameManage {
 		return "none";
 	}
 
-	// 1ターン
+	// 1ターンの流れ
 	async battle() {
 		// 勝敗
 		let winLose = "none";
@@ -521,8 +521,8 @@ class Command {
 		commandView.innerHTML = commands.join("");
 	}
 
-	// コマンドをクリックしたときのコールバック関数
-	callback(event) {
+	// コマンドをクリックしたときのハンドラ関数
+	handlerOnClick(event) {
 		// 味方のコマンド選択
 		let result = command.commandTurn(event);
 
