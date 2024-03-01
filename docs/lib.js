@@ -454,12 +454,14 @@ class GameManage {
 		let winLose = "none";
 
 		for (let c of characters) {
+			await sleep(400);
+
 			// 倒れたキャラクターはスキップする
 			if (c.liveFlag === false) {
 				continue;
 			}
 
-			await sleep(300);
+			await sleep(400);
 
 			// 各キャラクターの行動
 			c.action();
