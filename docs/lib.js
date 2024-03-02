@@ -532,6 +532,7 @@ class Command {
 	constructor() {
 		// コマンドを実行する味方
 		this.friendElementNum = [];
+
 		// 何人目の味方がコマンド選択中か（0が1人目）
 		this.current = 0;
 	}
